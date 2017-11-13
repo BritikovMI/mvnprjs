@@ -2,16 +2,12 @@ package ru.rbt.mvnprjs.app.controller;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import ru.rbt.mvnprjs.app.model.Calculator;
+import ru.rbt.mvnprjs.app.model.Parser;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.component.UIInput;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
@@ -20,11 +16,9 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 
-public class CalculatorController {
+public class ParserController {
 
-    private Calculator calculator;
-    private UIInput firstNumberInput;
-    private UIInput secondNumberInput;
+    private Parser parser;
     String rateStatus = "Please press GetCourse";
     static BigDecimal currentElem;
     static LinkedList<BigDecimal> courseElements = new LinkedList<>();
@@ -39,112 +33,14 @@ public class CalculatorController {
     String courseD[];
 
 
-    public void setCalculator(Calculator calculator) {
-        this.calculator = calculator;
+    public void setParser(Parser parser) {
+        this.parser = parser;
     }
 
-    public Calculator getCalculator() {
-        return calculator;
+    public Parser getParser() {
+        return parser;
     }
 
-    public String add() {
-
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-
-        try {
-            calculator.add();
-            facesContext.addMessage(null, new FacesMessage(
-                    FacesMessage.SEVERITY_INFO, "Added successfully", null));
-
-        } catch (Exception ex) {
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null));
-        }
-        return "results";
-    }
-
-    public String multiply() {
-
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-
-        try {
-            calculator.multiply();
-            facesContext.addMessage(null, new FacesMessage(
-                    FacesMessage.SEVERITY_INFO, "Multiplied successfully", null));
-
-        } catch (Exception ex) {
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null));
-        }
-        return "results";
-    }
-
-    public String divide() {
-
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-
-        try {
-            calculator.divide();
-            facesContext.addMessage(null, new FacesMessage(
-                    FacesMessage.SEVERITY_INFO, "Divided successfully", null));
-
-        } catch (Exception ex) {
-            if (ex instanceof ArithmeticException) {
-                secondNumberInput.setValue(Integer.valueOf(1));
-            }
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null));
-        }
-        return "results";
-    }
-
-    public String clear() {
-
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-
-        try {
-            calculator.clear();
-            facesContext.addMessage(null, new FacesMessage(
-                    FacesMessage.SEVERITY_INFO, "Results cleared", null));
-
-        } catch (Exception ex) {
-            facesContext.addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, ex.getMessage(), null));
-        }
-        return null;
-    }
-
-    public String getFirstNumberStyleClass() {
-        if (firstNumberInput.isValid()) {
-            return "labelClass";
-        } else {
-            return "errorClass";
-        }
-    }
-
-    public String getSecondNumberStyleClass() {
-        if (secondNumberInput.isValid()) {
-            return "labelClass";
-        } else {
-            return "errorClass";
-        }
-    }
-
-    public UIInput getFirstNumberInput() {
-        return firstNumberInput;
-    }
-
-    public void setFirstNumberInput(UIInput firstNumberInput) {
-        this.firstNumberInput = firstNumberInput;
-    }
-
-    public UIInput getSecondNumberInput() {
-        return secondNumberInput;
-    }
-
-    public void setSecondNumberInput(UIInput secondNumberInput) {
-        this.secondNumberInput = secondNumberInput;
-    }
 
 public String CourseD() {
 //    String[] myParams = request.getRequestURI().split("/");

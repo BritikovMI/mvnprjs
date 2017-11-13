@@ -1,2 +1,2 @@
-ru/rbt/mvnprjs/app/controller/CalculatorController.class
-ru/rbt/mvnprjs/app/model/Calculator.class
+ru/rbt/mvnprjs/app/model/Parser.class
+ru/rbt/mvnprjs/app/controller/ParserController.class

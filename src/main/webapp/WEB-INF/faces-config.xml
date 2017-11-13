@@ -11,27 +11,27 @@
     </application>
 
     <managed-bean>
-        <managed-bean-name>calculatorController</managed-bean-name>
+        <managed-bean-name>parserController</managed-bean-name>
         <managed-bean-class>
-            ru.rbt.mvnprjs.app.controller.CalculatorController
+            ru.rbt.mvnprjs.app.controller.ParserController
         </managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
         <managed-property>
-            <property-name>calculator</property-name>
-            <value>#{calculator}</value>
+            <property-name>parser</property-name>
+            <value>#{parser}</value>
         </managed-property>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>calculator</managed-bean-name>
+        <managed-bean-name>parser</managed-bean-name>
         <managed-bean-class>
-            ru.rbt.mvnprjs.app.model.Calculator
+            ru.rbt.mvnprjs.app.model.Parser
         </managed-bean-class>
         <managed-bean-scope>none</managed-bean-scope>
     </managed-bean>
 
     <navigation-rule>
-        <display-name>Calculator View</display-name>
-        <from-view-id>/pages/calculator.jsp</from-view-id>
+        <display-name>Parser View</display-name>
+        <from-view-id>/pages/parser.jsp</from-view-id>
         <navigation-case>
             <from-outcome>results</from-outcome>
             <to-view-id>/pages/results.jsp</to-view-id>
@@ -42,8 +42,8 @@
         <display-name>Results Page</display-name>
         <from-view-id>/pages/results.jsp</from-view-id>
         <navigation-case>
-            <from-outcome>calculator</from-outcome>
-            <to-view-id>/pages/calculator.jsp</to-view-id>
+            <from-outcome>parser</from-outcome>
+            <to-view-id>/pages/parser.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 
@@ -57,15 +57,15 @@
 
     <navigation-rule>
         <navigation-case>
-            <from-outcome>CALCULATOR</from-outcome>
-            <to-view-id>/pages/calculator.jsp</to-view-id>
+            <from-outcome>PARSER</from-outcome>
+            <to-view-id>/pages/parser.jsp</to-view-id>
         </navigation-case>
     </navigation-rule>
 
     <navigation-rule>
         <navigation-case>
-            <from-outcome>CALCULATOR_REDIRECT</from-outcome>
-            <to-view-id>/pages/calculator.jsp</to-view-id>
+            <from-outcome>PARSER_REDIRECT</from-outcome>
+            <to-view-id>/pages/parser.jsp</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
@@ -73,8 +73,8 @@
     <navigation-rule>
         <from-view-id>/pages/*</from-view-id>
         <navigation-case>
-            <from-outcome>calculatorMain</from-outcome>
-            <to-view-id>/pages/calculator.jsp</to-view-id>
+            <from-outcome>parserMain</from-outcome>
+            <to-view-id>/pages/parser.jsp</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
