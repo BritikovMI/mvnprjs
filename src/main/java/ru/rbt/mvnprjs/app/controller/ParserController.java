@@ -3,8 +3,10 @@ package ru.rbt.mvnprjs.app.controller;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import ru.rbt.mvnprjs.app.model.Parser;
+import ru.rbt.mvnprjs.app.other.DaoManager;
 
 import javax.faces.component.UIInput;
+import javax.inject.Inject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,11 +14,15 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 
 public class ParserController {
+//    @Inject
+    private DaoManager daoManager;
+
     String nameOf;
     String name= "customer-order";
     Long num = Long.parseLong("2");
@@ -35,11 +41,11 @@ public class ParserController {
     public String dBHelper(){
         nameOf = "HOPAAAa";
 
-////        List<String> result = daoManager.handleRequest(name, num);
-////        pw.println(orderRestImpl.findByNameAndId(name, num));
-////        for (String s : result) {
-////            pw.println(s);
-////        }
+        List<String> result = daoManager.handleRequest(name, num);
+//        pw.println(orderRestImpl.findByNameAndId(name, num));
+        for (String s : result) {
+            nameOf = s;
+        }
     return nameOf;
 }
 
