@@ -17,10 +17,10 @@
 		<p>This is the calculator application that has support for navigation rules.</p>
 		<h:form>
 			<h:panelGrid columns="1">
-				<h:commandLink action="CALCULATOR" value="Calculator Application"/>
-				<h:commandLink action="CALCULATOR_REDIRECT" value="Calculator Application (redirect)"/>
-				<h:outputLink value="pages/calculator.jsf">
-					<h:outputText value="Calculator Application (outputlink)"/>
+				<h:commandLink action="PARSER" value="Parser Application"/>
+				<h:commandLink action="PARSER_REDIRECT" value="Parser Application (redirect)"/>
+				<h:outputLink value="pages/parser.jsf">
+					<h:outputText value="Parser Application (outputlink)"/>
 				</h:outputLink>
 			</h:panelGrid>
 		</h:form>

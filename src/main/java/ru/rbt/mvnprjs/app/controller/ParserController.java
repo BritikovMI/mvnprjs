@@ -17,25 +17,24 @@ import java.util.Queue;
 
 
 public class ParserController {
-String nameOf;
-
+    String nameOf;
+    String name= "customer-order";
+    Long num = Long.parseLong("2");
     public String getNameOf() {
         return nameOf;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Long getNum() {
+        return num;
+    }
+
     public String dBHelper(){
         nameOf = "HOPAAAa";
-//
-//    String name = myParams[4];
-//    //        String name = "customer-order";
-//    Long num = Long.parseLong(myParams[6]);
-//        Long num = Long.parseLong("2");
 
-//        response.setCharacterEncoding("UTF-8");
-//        response.setContentType("text/html");
-//    PrintWriter pw = response.getWriter();
-//        pw.println("<pre>");
-//        pw.println("<h1>Hello, the name is: </h1>" + name + "<h3>Your table</h3>");
 ////        List<String> result = daoManager.handleRequest(name, num);
 ////        pw.println(orderRestImpl.findByNameAndId(name, num));
 ////        for (String s : result) {

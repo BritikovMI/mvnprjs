@@ -1,2 +1,17 @@
+ru/rbt/mvnprjs/app/jpa/Customer_.class
+ru/rbt/mvnprjs/app/jpa/Product_.class
 ru/rbt/mvnprjs/app/model/Parser.class
+ru/rbt/mvnprjs/app/other/DaoManager.class
+ru/rbt/mvnprjs/app/jpa/OrderItem_.class
+ru/rbt/mvnprjs/app/ejb/CustomerDao.class
+ru/rbt/mvnprjs/app/jpa/Customer.class
+ru/rbt/mvnprjs/app/jpa/OrderItem.class
+ru/rbt/mvnprjs/app/jpa/Order_.class
+ru/rbt/mvnprjs/app/ejb/OrderItemDao.class
 ru/rbt/mvnprjs/app/controller/ParserController.class
+ru/rbt/mvnprjs/app/ejb/PuProvider.class
+ru/rbt/mvnprjs/app/ejb/ProductDao.class
+ru/rbt/mvnprjs/app/jpa/Order.class
+ru/rbt/mvnprjs/app/ejb/AbstractEntityDao.class
+ru/rbt/mvnprjs/app/ejb/OrderDao.class
+ru/rbt/mvnprjs/app/jpa/Product.class

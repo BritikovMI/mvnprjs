@@ -16,6 +16,10 @@
         <h4>Parser</h4>
         <%--<h:messages infoClass="infoClass" errorClass="errorClass" layout="table" globalOnly="true"/>--%>
 
+        <h1>Hello, the name is: </h1>
+        <h4><h:outputText value="#{parserController.name}" /></h4>
+        <h3>Your table</h3>
+
                 <h4><h:outputText value="#{parserController.rateStatus}" /></h4>
                 <h4><h:outputText value="#{parserController.nameOf}" /></h4>
         <div>
