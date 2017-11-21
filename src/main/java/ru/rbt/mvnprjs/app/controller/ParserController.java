@@ -17,6 +17,32 @@ import java.util.Queue;
 
 
 public class ParserController {
+String nameOf;
+
+    public String getNameOf() {
+        return nameOf;
+    }
+
+    public String dBHelper(){
+        nameOf = "HOPAAAa";
+//
+//    String name = myParams[4];
+//    //        String name = "customer-order";
+//    Long num = Long.parseLong(myParams[6]);
+//        Long num = Long.parseLong("2");
+
+//        response.setCharacterEncoding("UTF-8");
+//        response.setContentType("text/html");
+//    PrintWriter pw = response.getWriter();
+//        pw.println("<pre>");
+//        pw.println("<h1>Hello, the name is: </h1>" + name + "<h3>Your table</h3>");
+////        List<String> result = daoManager.handleRequest(name, num);
+////        pw.println(orderRestImpl.findByNameAndId(name, num));
+////        for (String s : result) {
+////            pw.println(s);
+////        }
+    return nameOf;
+}
 
     private Parser parser;
     String rateStatus = "Please press GetCourse";
@@ -37,34 +63,12 @@ public class ParserController {
         this.parser = parser;
     }
 
-    public Parser getParser() {
-        return parser;
-    }
-
 
 public String CourseD() {
-//    String[] myParams = request.getRequestURI().split("/");
+
 
     StringBuilder sb = new StringBuilder();
 
-//        String name = request.getServletPath();
-//        String sNum = request.getRequestURI();
-//
-//    String name = myParams[4];
-//    //        String name = "customer-order";
-//    Long num = Long.parseLong(myParams[6]);
-//        Long num = Long.parseLong("2");
-
-//        response.setCharacterEncoding("UTF-8");
-//        response.setContentType("text/html");
-//    PrintWriter pw = response.getWriter();
-//        pw.println("<pre>");
-//        pw.println("<h1>Hello, the name is: </h1>" + name + "<h3>Your table</h3>");
-////        List<String> result = daoManager.handleRequest(name, num);
-////        pw.println(orderRestImpl.findByNameAndId(name, num));
-////        for (String s : result) {
-////            pw.println(s);
-////        }
 
 
     Thread threadWrite = new Thread(() -> {
@@ -79,13 +83,7 @@ public String CourseD() {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//                value = sb.toString().split("<Value>");
-//                dCourse = value[11].split("</Value>");
-//                preFinalSCourse = dCourse[0].split(",");
-//                finalSCourse = preFinalSCourse[0] + "." + preFinalSCourse[1];
-//                finalCourse = Double.parseDouble(finalSCourse);
             queue.add(finalCourse);
-//                pw.println("Hello from " + Thread.currentThread());
 
             i++;
         } while (i < 24);
@@ -95,8 +93,6 @@ public String CourseD() {
     Thread threadRead = new Thread(() -> {
         int compare;
         BigDecimal first, last;
-//            Integer i = Integer.valueOf(0);
-//            do {
         courseElements.clear();
         try {
             Thread.sleep(120000);
@@ -118,8 +114,6 @@ public String CourseD() {
         } else {
             rateStatus = "The rate has not changed and is equal to: " + first;
         }
-//                i++;
-//            } while (i < 1);
         Thread.interrupted();
     });
 
@@ -136,29 +130,6 @@ public String CourseD() {
     threadRead.interrupt();
     return rateStatus;
 }
-//        Runnable task = () -> {
-//            try {
-//                siteLoader(sb);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            value = sb.toString().split("<Value>");
-//            dCourse = value[11].split("</Value>");
-//            preFinalSCourse = dCourse[0].split(",");
-//            finalSCourse = preFinalSCourse[0] + "." + preFinalSCourse[1];
-//            Double finalCourse = Double.parseDouble(finalSCourse);
-//
-//            pw.print(finalCourse);
-//        };
-//
-//        task.run();
-//
-//        Thread thread = new Thread(task);
-//        thread.start();
-
-//        pw.println("</pre>");
-//        pw.close();
-
 
     public BigDecimal siteParser(StringBuilder sb) throws IOException {
         String finalSCourse;
@@ -177,12 +148,6 @@ public String CourseD() {
     }
 
     public String siteLoader(StringBuilder sb) throws IOException {
-//        getDate();
-//        newDate = dayS;
-//        if (month < 10)
-//            newMonth = "0" + String.valueOf(month);
-//        else
-//            newMonth = String.valueOf(month);
 
         URLConnection connection = new URL("https://www.calc.ru/forex-USD-RUB.html").openConnection();
 

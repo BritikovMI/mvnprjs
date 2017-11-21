@@ -17,8 +17,10 @@
         <%--<h:messages infoClass="infoClass" errorClass="errorClass" layout="table" globalOnly="true"/>--%>
 
                 <h4><h:outputText value="#{parserController.rateStatus}" /></h4>
+                <h4><h:outputText value="#{parserController.nameOf}" /></h4>
         <div>
             <h:commandButton action="#{parserController.CourseD}"  value="GetCourse" />
+            <h:commandButton action="#{parserController.dBHelper}"  value="GetDBData" />
             <h:commandButton action="HOME" value="Home" immediate="true"/>
         </div>
     </h:form>
