@@ -7,7 +7,11 @@ import ru.rbt.mvnprjs.app.ejb.ProductDao;
 import ru.rbt.mvnprjs.app.jpa.Order;
 import ru.rbt.mvnprjs.app.jpa.Product;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,15 +22,52 @@ import java.util.List;
  * <p>
  * Created by er23887 on 22.08.2017.
  */
-public class DaoManager {
+@ManagedBean(name="daoMan")
+@SessionScoped
+public class DaoManager implements Serializable{
 
-    @Inject
+    private static final long serialVersionUID = 1L;
+
+    @ManagedProperty(value = "#{customer}")
     private CustomerDao customerDao;
-    @Inject
+    @ManagedProperty(value = "#{order}")
     private OrderDao orderDao;
-    @Inject
+    @ManagedProperty(value = "#{product}")
     private ProductDao productDao;
-    @Inject
+
+    public CustomerDao getCustomerDao() {
+        return customerDao;
+    }
+
+    public void setCustomerDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
+
+    public OrderDao getOrderDao() {
+        return orderDao;
+    }
+
+    public void setOrderDao(OrderDao orderDao) {
+        this.orderDao = orderDao;
+    }
+
+    public ProductDao getProductDao() {
+        return productDao;
+    }
+
+    public void setProductDao(ProductDao productDao) {
+        this.productDao = productDao;
+    }
+
+    public OrderItemDao getOrderItemDao() {
+        return orderItemDao;
+    }
+
+    public void setOrderItemDao(OrderItemDao orderItemDao) {
+        this.orderItemDao = orderItemDao;
+    }
+
+    @ManagedProperty(value = "#{orderit}")
     private OrderItemDao orderItemDao;
 
     public List<String> handleRequest(String name, Long num) {

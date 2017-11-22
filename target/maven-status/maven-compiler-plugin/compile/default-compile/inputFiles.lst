@@ -2,6 +2,7 @@
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/jpa/package-info.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/package-info.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/CustomerDao.java
+/Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/rest/DbhelperRestApplication.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/other/DaoManager.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/AbstractEntityDao.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/controller/ParserController.java
@@ -10,6 +11,8 @@
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/jpa/Customer.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/model/Parser.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/jpa/Product.java
+/Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/rest/OrderRest.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/OrderDao.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/ProductDao.java
+/Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/rest/OrderRestImpl.java
 /Users/supercep/Desktop/mvnprjs/src/main/java/ru/rbt/mvnprjs/app/ejb/PuProvider.java

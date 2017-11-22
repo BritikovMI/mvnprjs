@@ -21,7 +21,7 @@
         <h3>Your table</h3>
 
                 <h4><h:outputText value="#{parserController.rateStatus}" /></h4>
-                <h4><h:outputText value="#{parserController.nameOf}" /></h4>
+                <h4><h:outputText value="#{parserController.response}" /></h4>
         <div>
             <h:commandButton action="#{parserController.CourseD}"  value="GetCourse" />
             <h:commandButton action="#{parserController.dBHelper}"  value="GetDBData" />

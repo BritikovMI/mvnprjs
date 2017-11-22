@@ -5,23 +5,55 @@ import org.jsoup.nodes.Document;
 import ru.rbt.mvnprjs.app.model.Parser;
 import ru.rbt.mvnprjs.app.other.DaoManager;
 
-import javax.faces.component.UIInput;
-import javax.inject.Inject;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-
-public class ParserController {
-//    @Inject
+@ManagedBean
+@SessionScoped
+public class ParserController implements Serializable{
+    private static final long serialVersionUID = 1L;
+    @ManagedProperty(value = "#{daoMan}")
     private DaoManager daoManager;
+
+//    @ManagedProperty(value = "#{orderRest}")
+//    private OrderRestImpl orderRestImpl;
+//
+//    public OrderRestImpl getOrderRestImpl() {
+//        return orderRestImpl;
+//    }
+//
+//    public void setOrderRestImpl(OrderRestImpl orderRestImpl) {
+//        this.orderRestImpl = orderRestImpl;
+//    }
+
+    public DaoManager getDaoManager() {
+        return daoManager;
+    }
+
+    public void setDaoManager(DaoManager daoManager) {
+        this.daoManager = daoManager;
+    }
+    Response response;
+
+    public Response getResponse() {
+        return response;
+    }
+
+    public void setResponse(Response response) {
+        this.response = response;
+    }
 
     String nameOf;
     String name= "customer-order";
@@ -38,15 +70,15 @@ public class ParserController {
         return num;
     }
 
-    public String dBHelper(){
+    public Response dBHelper(){
         nameOf = "HOPAAAa";
+//        response = orderRestImpl.findByNameAndId(name, num);
+//        List<String> result = daoManager.handleRequest(name, num);
+//        for (String s : result) {
+//            nameOf = s;
+//        }
 
-        List<String> result = daoManager.handleRequest(name, num);
-//        pw.println(orderRestImpl.findByNameAndId(name, num));
-        for (String s : result) {
-            nameOf = s;
-        }
-    return nameOf;
+    return response;
 }
 
     private Parser parser;
