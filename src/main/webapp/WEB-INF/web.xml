@@ -23,7 +23,7 @@
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-
+  <mime-mapping> <extension>xhtml</extension> <mime-type>application/xml</mime-type> </mime-mapping>
   <!-- Map these files with JSF -->
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>

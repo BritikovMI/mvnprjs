@@ -6,11 +6,8 @@ ru/rbt/mvnprjs/app/jpa/OrderItem_.class
 ru/rbt/mvnprjs/app/ejb/CustomerDao.class
 ru/rbt/mvnprjs/app/jpa/Customer.class
 ru/rbt/mvnprjs/app/jpa/OrderItem.class
-ru/rbt/mvnprjs/app/rest/OrderRest.class
-ru/rbt/mvnprjs/app/rest/DbhelperRestApplication.class
 ru/rbt/mvnprjs/app/jpa/Order_.class
 ru/rbt/mvnprjs/app/ejb/OrderItemDao.class
-ru/rbt/mvnprjs/app/rest/OrderRestImpl.class
 ru/rbt/mvnprjs/app/controller/ParserController.class
 ru/rbt/mvnprjs/app/ejb/PuProvider.class
 ru/rbt/mvnprjs/app/ejb/ProductDao.class
