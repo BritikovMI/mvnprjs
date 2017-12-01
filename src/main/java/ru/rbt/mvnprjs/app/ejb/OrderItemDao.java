@@ -2,9 +2,6 @@ package ru.rbt.mvnprjs.app.ejb;
 
 import ru.rbt.mvnprjs.app.jpa.*;
 
-import javax.ejb.Stateless;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -16,8 +13,6 @@ import java.util.TreeSet;
 /**
  * Created by BritikovMI on 03.08.2017.
  */
-@ManagedBean(name="orderit")
-@SessionScoped
 public class OrderItemDao extends AbstractEntityDao<Long, OrderItem> {
 
     public OrderItemDao() {

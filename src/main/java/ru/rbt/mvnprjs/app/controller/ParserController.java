@@ -17,6 +17,7 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -24,6 +25,7 @@ import java.util.Queue;
 @SessionScoped
 public class ParserController implements Serializable{
     private static final long serialVersionUID = 1L;
+
     @ManagedProperty(value = "#{daoMan}")
     private DaoManager daoManager;
 
@@ -71,12 +73,12 @@ public class ParserController implements Serializable{
     }
 
     public Response dBHelper(){
-        nameOf = "HOPAAAa";
+//        nameOf = "HOPAAAa";
 //        response = orderRestImpl.findByNameAndId(name, num);
-//        List<String> result = daoManager.handleRequest(name, num);
-//        for (String s : result) {
-//            nameOf = s;
-//        }
+        List<String> result = daoManager.handleRequest(name, num);
+        for (String s : result) {
+            nameOf = s;
+        }
 
     return response;
 }
